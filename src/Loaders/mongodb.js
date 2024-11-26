@@ -1,7 +1,11 @@
 const mongoose = require("mongoose") ;
-
+const dotenv = require("dotenv") ;
 async function startDB() {
-    await mongoose.connect('mongodb+srv://bernardoloeseramaral:sMlsDmILMX0T6Y8f@cursonode.axc52.mongodb.net/?retryWrites=true&w=majority&appName=CursoNode')
+    console.log("aqui") 
+    await mongoose.connect(
+        process.env.MONGO_URI) ;
+
+        console.log("Banco de dados inicializado") ;
     
 }
 module.exports = startDB;
